@@ -36,16 +36,16 @@ while rounds > 0:
     computer = random.choice(options)
 
     if player == 'T':
-        player_cooperate = True
+        player_testifies = True
     else:
-        player_cooperate = False
+        player_testifies = False
 
     if computer == 'T':
-        computer_cooperate = True
+        computer_testifies = True
     else:
-        computer_cooperate = False
+        computer_testifies = False
 
-    calc_jail_time(player_cooperate, computer_cooperate)
+    calc_jail_time(player_testifies, computer_testifies)
 
     rounds = rounds - 1
 
