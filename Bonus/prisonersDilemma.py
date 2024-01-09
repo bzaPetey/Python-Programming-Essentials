@@ -1,6 +1,6 @@
 import random
 
-rounds = 2                  # number of rounds
+rounds = 10                 # number of rounds
 options = ['S', 'T']        # options
 jail_time = [0, 0]          # years in jail
 
@@ -14,11 +14,11 @@ def calc_jail_time(player, computer):
 
     elif player and not computer:
         jail_time[1] += 5
-        print("Player 1 betrays Computer. Player 1 goes free, Computer gets 5 years in prison.")
+        print("The Player 1 betrays the Computer. Player 1 goes free, the Computer gets 5 years in prison.")
 
     elif not player and computer:
         jail_time[0] += 5
-        print("Computer betrays Player 1. Computer goes free, Player 1 gets 5 years in prison.")
+        print("The Computer betrays Player 1. The Computer goes free, Player 1 gets 5 years in prison.")
 
     else:
         jail_time[0] += 4
@@ -28,11 +28,11 @@ def calc_jail_time(player, computer):
 
 # Main code
 print("Prisoner's Dilemma Game")
-print("Enter 'S' to Stay Silent or 'T' to Turn Them In.")
+print("Enter 'S' to Snitch or 'Q' to Remain Quiet.")
 
 
 while rounds > 0:
-    player = input("Choose (S/T): ").upper()
+    player = input("Choose (S/Q): ").upper()
     computer = random.choice(options)
 
     if player == 'S':
@@ -49,4 +49,8 @@ while rounds > 0:
 
     rounds = rounds - 1
 
-print(jail_time)
+print(f'The Player get {jail_time[0]} years in jail.')
+print(f'The Computer get {jail_time[1]} years in jail.')
+
+# who serves more time and by how much?
+# keep track of the picks for each round
