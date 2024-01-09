@@ -1,28 +1,28 @@
 import random
 
 rounds = 10                 # number of rounds
-options = ['S', 'T']        # options
+options = ['S', 'Q']        # options - snitch or quiet
 jail_time = [0, 0]          # years in jail
 
 
 # calc jail time
 def calc_jail_time(player, computer):
     if player and computer:
-        jail_time[0] += 2
-        jail_time[1] += 2
+        jail_time[0] += 1
+        jail_time[1] += 1
         print("Both players cooperate. Each gets 2 years in prison.")
 
     elif player and not computer:
-        jail_time[1] += 5
+        jail_time[1] += 3
         print("The Player 1 betrays the Computer. Player 1 goes free, the Computer gets 5 years in prison.")
 
     elif not player and computer:
-        jail_time[0] += 5
+        jail_time[0] += 3
         print("The Computer betrays Player 1. The Computer goes free, Player 1 gets 5 years in prison.")
 
     else:
-        jail_time[0] += 4
-        jail_time[1] += 4
+        jail_time[0] += 2
+        jail_time[1] += 2
         print("Both players betray each other. Each gets 4 years in prison.")
 
 
